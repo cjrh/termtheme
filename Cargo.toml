@@ -1,0 +1,24 @@
+[package]
+name = "termtheme"
+version = "0.1.0"
+authors = ["Caleb Hattingh <caleb.hattingh@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt = { version = "0.3.16", features = [ "paw" ] }
+paw = "1.0.0"
+subprocess = "0.2.4"
+spinners = "1.2.0"
+yansi = "0.5.0"
+gio = "0.9.1"
+colors-transform = "0.2.11"
+json = "0.12.4"
+
+[profile.release]
+# https://github.com/johnthagen/min-sized-rust
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+opt-level = 'z'
